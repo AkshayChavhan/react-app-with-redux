@@ -5,18 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
+import countReducer from './Redux/reducer/countReducer';
 
-const reducer = (state = 0, action) => {
-  if (action.type === "ADD") {
-    return state + 1;
-  }
-  else if (action.type === "REMOVE") {
-    return state - 1;
-  }
-  return state;
-};
 
-const store = createStore(reducer);
+const store = createStore(countReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
